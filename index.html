@@ -925,7 +925,7 @@ button { cursor: pointer; }
     if (fly) { active[p.c] = true; syncChips(); revealAt([p.a, p.o], 14); }
     const coord = p.a.toFixed(5) + ", " + p.o.toFixed(5);
     const acts = el("div", "acts");
-    const go = el("a", null, "Apri in Mappe"); go.href = "https://maps.apple.com/?ll=" + p.a + "," + p.o + "&q=" + encodeURIComponent(p.n); go.target = "_blank"; go.rel = "noopener";
+    const go = el("a", null, "Apri in Google Maps"); go.href = "https://www.google.com/maps/dir/?api=1&destination=" + p.a + "," + p.o; go.target = "_blank"; go.rel = "noopener";
     const cp = el("button", null, "Copia coordinate");
     cp.onclick = () => { const ok = () => { cp.textContent = "Copiate"; }; navigator.clipboard && navigator.clipboard.writeText(coord).then(ok, () => { cp.textContent = coord; }); };
     acts.append(go, cp);
